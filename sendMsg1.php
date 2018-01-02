@@ -20,4 +20,8 @@ $opts = array(
 );
 
 $context = stream_context_create($opts);
-file_get_contents("http://localhost:8080/PHPHttp/index.php", false, $context);
+//file_get_contents()模拟表单提交
+// file_get_contents("http://localhost:8080/PHPHttp/index.php", false, $context);
+//fopen()模拟表单提交
+$fp = fopen("http://localhost:8080/PHPHttp/index.php", "r", false, $context);
+fclose($fp);
